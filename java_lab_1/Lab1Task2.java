@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SecondTask {
+public class Lab1Task2 {
     public static double calculateMinRaisedToEight(int x, int y){
         double minimum;
         minimum = Math.min(x, y);

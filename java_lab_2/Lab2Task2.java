@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class NegativeElementsProcessor {
+public class Lab2Task2 {
     public static int[] DoubleNegativeNumsFromNumbers(int[] numbersX){
         int count = 0;
 

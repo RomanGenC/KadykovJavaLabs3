@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class ReciprocalArrayProcessor {
+public class Lab2Task1 {
     private static final int THRESHOLD = 50;
 
     public static void CreateReciprocalFraction(int[] numbers){
