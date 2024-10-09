@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class FirstTask {
+public class Lab1Task1 {
     public static double calculateResult(int x, int y){
         if (x * y > 100) {
             return 2 * Math.pow(x, 3);

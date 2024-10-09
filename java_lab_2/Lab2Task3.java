@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class MatrixMinVector {
+public class Lab2Task3 {
     public static int[][] generateMatrix(int rows, int cols){
         int[][] matrix = new int[rows][cols];
         Random random = new Random();

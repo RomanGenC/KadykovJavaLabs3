@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class MinMaxValueMatrixMainDiagonal {
+public class Lab2Task4 {
     public static int[][] generateMatrix(int n) {
         int[][] matrix = new int[n][n];
         Random random = new Random();

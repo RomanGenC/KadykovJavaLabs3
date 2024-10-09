@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ThirdTask {
+public class Lab1Task3 {
     public static double[] calculateFAndY(int x){
         double cos, sin, ctg, tg;
         sin = Math.sin(x);
