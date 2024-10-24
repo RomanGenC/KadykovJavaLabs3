@@ -1,6 +1,8 @@
+import java.util.ArrayList;
+
 public class Lab4Task1 {
     public static void main(String[] args) {
-        Drawing drawing = new Drawing(10);
+        Drawing drawing = new Drawing();
 
         drawing.addShape(new Circle(5));
         drawing.addShape(new Square(4));
@@ -88,28 +90,20 @@ class Triangle extends Shape {
     }
 }
 
-class Drawing{
-    private Shape[] shapes;
-    private int count;
+class Drawing {
+    private ArrayList<Shape> shapes;
 
-    public Drawing(int capacity) {
-        shapes = new Shape[capacity];
-        count = 0;
+    public Drawing() {
+        shapes = new ArrayList<>();
     }
 
     public boolean addShape(Shape shape) {
-        if (count < shapes.length) {
-            shapes[count++] = shape;
-            return true;
-        }
-        return false;
+        return shapes.add(shape);
     }
 
     public Shape popShape() {
-        if (count > 0) {
-            Shape removedShape = shapes[--count];
-            shapes[count] = null;
-            return removedShape;
+        if (!shapes.isEmpty()) {
+            return shapes.remove(shapes.size() - 1);
         }
         return null;
     }
@@ -117,14 +111,18 @@ class Drawing{
     public void countShapes() {
         int circles = 0, squares = 0, triangles = 0;
 
-        for (int i = 0; i < count; i++) {
-            if (shapes[i] instanceof Circle) {
+        for (Shape shape : shapes) {
+            if (shape instanceof Circle) {
                 circles++;
-            } else if (shapes[i] instanceof Square) {
-                squares++;
-            } else if (shapes[i] instanceof Triangle) {
-                triangles++;
+                continue;
             }
+
+            if (shape instanceof Square) {
+                squares++;
+                continue;
+            }
+
+            triangles++;
         }
 
         System.out.println("Кругов: " + circles);
@@ -134,15 +132,15 @@ class Drawing{
 
     public double getTotalArea() {
         double totalArea = 0;
-        for (int i = 0; i < count; i++) {
-            totalArea += shapes[i].getArea();
+        for (Shape shape : shapes) {
+            totalArea += shape.getArea();
         }
         return totalArea;
     }
 
     public void printAllShapes() {
-        for (int i = 0; i < count; i++) {
-            shapes[i].printInfo();
+        for (Shape shape : shapes) {
+            shape.printInfo();
         }
     }
 }
